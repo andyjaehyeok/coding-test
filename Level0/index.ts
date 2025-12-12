@@ -17,3 +17,8 @@ function times(num1: number, num2: number) {
 function divide(num1: number, num2: number) {
   return Math.floor(num1 / num2);
 }
+
+//두 수의 나눗셈
+function divideAndTimes(num1: number, num2: number) {
+  return Math.floor((num1 / num2) * 1000);
+}

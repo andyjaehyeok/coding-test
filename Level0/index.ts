@@ -68,3 +68,30 @@ function arrDouble(numbers: number[]) {
   }
   return tempArr;
 }
+
+//나머지 구하기
+function modulo(num1: number, num2: number) {
+  return num1 % num2;
+}
+
+//중앙값 구하기
+function getMedian(array: number[]) {
+  array.sort((a, b) => a - b);
+
+  return array[Math.floor(array.length / 2)];
+}
+
+// //최빈값 구하기
+// function getMode(array: number[]) {
+//   let num = 0;
+//   let sameNum;
+//   let count = 0;
+//   for (let i = 1; i <= array.length; i++) {
+//     if (array[i - 1] === array[i]) {
+//       count++;
+//       sameNum = array[i];
+//     } else {
+
+//     }
+//   }
+// }

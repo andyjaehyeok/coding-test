@@ -99,11 +99,11 @@ function getMode(array: number[]) {
     }
   }
 
-  const sortedDesc = [...arr1].sort((a, b) => b - a);
+  // const sortedDesc = [...arr1].sort((a, b) => b - a);
 
-  if (sortedDesc[0] === sortedDesc[1]) {
-    return -1;
-  }
+  // if (sortedDesc[0] === sortedDesc[1]) {
+  //   return -1;
+  // }
 
   let max = arr1[0];
   let maxIndex: any;
@@ -114,10 +114,8 @@ function getMode(array: number[]) {
     }
   }
 
-  return arr2[maxIndex];
+  return arr1;
 }
-
-console.log(getMode([1, 2, 3, 3, 3, 4]));
 
 //짝수는 싫아요
 function oddArr(n: number) {
@@ -143,4 +141,26 @@ function slicePizza(n: number) {
   if (n % 7 !== 0) {
     return Math.floor(n / 7 + 1);
   }
+}
+
+//피자 나눠 먹기2
+function slicePizzaV2(n: number) {
+  if (n <= 6) {
+    if (6 % n === 0) {
+      return 1;
+    } else {
+      return 6 % 4;
+    }
+  } else {
+    return (n % 6) + 1;
+  }
+}
+
+//배열의 평균값
+function averageOfArr(array: number[]) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum / array.length;
 }

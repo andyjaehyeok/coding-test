@@ -77,21 +77,55 @@ function modulo(num1: number, num2: number) {
 //중앙값 구하기
 function getMedian(array: number[]) {
   array.sort((a, b) => a - b);
-
   return array[Math.floor(array.length / 2)];
 }
 
-// //최빈값 구하기
-// function getMode(array: number[]) {
-//   let num = 0;
-//   let sameNum;
-//   let count = 0;
-//   for (let i = 1; i <= array.length; i++) {
-//     if (array[i - 1] === array[i]) {
-//       count++;
-//       sameNum = array[i];
-//     } else {
+//최빈값 구하기
+function getMode(array: number[]) {
+  if (array.length === 1) {
+    return 1;
+  }
 
-//     }
-//   }
-// }
+  let count = 1;
+  let arr1: any[] = [];
+  let arr2: any[] = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === array[i + 1]) {
+      count++;
+    } else {
+      arr1.push(count);
+      arr2.push(array[i]);
+      count = 1;
+    }
+  }
+
+  // arr1.sort((a, b) => b - a);
+
+  // if (arr1[0] === arr1[1]) {
+  //   return -1;
+  // }
+
+  let max = arr1[0];
+  let maxIndex: any;
+  for (let i = 1; i <= arr1.length; i++) {
+    if (arr1[i] > max) {
+      max = arr1[i];
+      maxIndex = i;
+    }
+  }
+
+  return arr2[maxIndex];
+}
+
+//짝수는 싫아요
+function oddArr(n: number) {
+  let arr: number[] = [];
+  for (let i = 1; i <= n; i++)
+    if (i % 2 !== 0) {
+      arr.push(i);
+    }
+
+  return arr;
+}
+
+console.log(oddArr(15));

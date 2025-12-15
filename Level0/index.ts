@@ -99,11 +99,11 @@ function getMode(array: number[]) {
     }
   }
 
-  // arr1.sort((a, b) => b - a);
+  const sortedDesc = [...arr1].sort((a, b) => b - a);
 
-  // if (arr1[0] === arr1[1]) {
-  //   return -1;
-  // }
+  if (sortedDesc[0] === sortedDesc[1]) {
+    return -1;
+  }
 
   let max = arr1[0];
   let maxIndex: any;
@@ -117,6 +117,8 @@ function getMode(array: number[]) {
   return arr2[maxIndex];
 }
 
+console.log(getMode([1, 2, 3, 3, 3, 4]));
+
 //짝수는 싫아요
 function oddArr(n: number) {
   let arr: number[] = [];
@@ -128,4 +130,17 @@ function oddArr(n: number) {
   return arr;
 }
 
-console.log(oddArr(15));
+//피자 나눠 먹기
+function slicePizza(n: number) {
+  if (n % 7 === 0) {
+    return n / 7;
+  }
+
+  if (n <= 7) {
+    return 1;
+  }
+
+  if (n % 7 !== 0) {
+    return Math.floor(n / 7 + 1);
+  }
+}

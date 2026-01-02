@@ -1,16 +1,15 @@
-function solution(my_string) {
-  let arr = [];
-  const string = my_string.toLowerCase();
-
-  for (let i = 0; i < string.length; i++) {
-    arr.push(string[i]);
+function solution(num, k) {
+  const arr = [];
+  let str = String(num);
+  for (let i = 0; i < str.length; i++) {
+    arr.push(str[i]);
   }
-
-  arr.sort();
-  let sum = "";
 
   for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+    if (arr[i] === String(k)) {
+      return i + 1;
+    }
   }
-  return sum;
+
+  return -1;
 }

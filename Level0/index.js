@@ -1,15 +1,20 @@
-function solution(num, k) {
+function solution(my_string) {
   const arr = [];
-  let str = String(num);
-  for (let i = 0; i < str.length; i++) {
-    arr.push(str[i]);
+  for (let i = 0; i < my_string.length; i++) {
+    arr.push(my_string[i]);
   }
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === String(k)) {
-      return i + 1;
+    if (arr[i] === arr[i].toUpperCase()) {
+      arr[i] = arr[i].toLowerCase();
+    } else {
+      arr[i] = arr[i].toUpperCase();
     }
   }
 
-  return -1;
+  let sum = "";
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
 }

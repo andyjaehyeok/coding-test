@@ -1,20 +1,48 @@
-function solution(my_string) {
+function solution(age) {
   const arr = [];
-  for (let i = 0; i < my_string.length; i++) {
-    arr.push(my_string[i]);
+  const answer = [];
+  let string = "";
+  const alphabets = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  let str = String(age);
+  for (let i = 0; i < str.length; i++) {
+    arr.push(str[i]);
   }
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === arr[i].toUpperCase()) {
-      arr[i] = arr[i].toLowerCase();
-    } else {
-      arr[i] = arr[i].toUpperCase();
-    }
+    answer.push(alphabets[arr[i]]);
   }
 
-  let sum = "";
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+  for (let i = 0; i < answer.length; i++) {
+    string += answer[i];
   }
-  return sum;
+  return string;
 }
+
+console.log(solution(100));

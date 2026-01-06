@@ -1,48 +1,19 @@
-function solution(age) {
-  const arr = [];
-  const answer = [];
-  let string = "";
-  const alphabets = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  let str = String(age);
-  for (let i = 0; i < str.length; i++) {
-    arr.push(str[i]);
+function solution(numbers, direction) {
+  let arr = [];
+  if (direction === "right") {
+    arr.push(numbers[numbers.length - 1]);
+    for (let i = 0; i < numbers.length - 1; i++) {
+      arr.push(numbers[i]);
+    }
+  } else {
+    for (let i = 1; i < numbers.length; i++) {
+      arr.push(numbers[i]);
+    }
+
+    arr.push(numbers[0]);
   }
 
-  for (let i = 0; i < arr.length; i++) {
-    answer.push(alphabets[arr[i]]);
-  }
-
-  for (let i = 0; i < answer.length; i++) {
-    string += answer[i];
-  }
-  return string;
+  return arr;
 }
 
-console.log(solution(100));
+console.log(solution([4, 455, 6, 4, -1, 45, 6], "left"));

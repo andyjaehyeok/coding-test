@@ -1,17 +1,15 @@
-function solution(n) {
-  let answer = 0;
-  for (let i = 1; i <= n; i++) {
-    let count = 0;
-    for (let j = 1; j <= i; j++) {
-      if (i % j === 0) {
-        count++;
-      }
-    }
-
-    if (count >= 3) {
-      answer++;
+function solution(my_string) {
+  const arr = [];
+  for (let i = 0; i < my_string.length; i++) {
+    if (!arr.includes(my_string[i])) {
+      arr.push(my_string[i]);
     }
   }
 
-  return answer;
+  let str = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    str += arr[i];
+  }
+  return str;
 }

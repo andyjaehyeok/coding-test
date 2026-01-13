@@ -1,15 +1,17 @@
-function solution(my_string) {
+function solution(num_list, n) {
   const arr = [];
-  for (let i = 0; i < my_string.length; i++) {
-    if (!arr.includes(my_string[i])) {
-      arr.push(my_string[i]);
+  let count = 0;
+  for (let i = 0; i < num_list.length; i++) {
+    let tempArr = [];
+    for (let j = 0; j < n; j++) {
+      tempArr.push(num_list[count]);
+      count++;
+    }
+
+    if (count > num_list.length) {
+      return arr;
+    } else {
+      arr.push(tempArr);
     }
   }
-
-  let str = "";
-
-  for (let i = 0; i < arr.length; i++) {
-    str += arr[i];
-  }
-  return str;
 }
